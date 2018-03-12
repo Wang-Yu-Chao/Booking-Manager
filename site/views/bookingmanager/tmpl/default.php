@@ -1,10 +1,5 @@
 <?php
 defined('_JEXEC') or die('Restricted Access');
-
-//JHtml::_('formbehavior.chosen', 'select');
-
-//$listOrder  = $this->escape($this->filter_order);
-//$listDirn   = $this->escape($this->filter_order_Dir);
 ?>
 <form action="index.php?option=com_bookingmanager" method="post" id="adminForm" name="adminForm">
 
@@ -21,12 +16,6 @@ defined('_JEXEC') or die('Restricted Access');
             <th width="45%">
 				<?php echo JText::_('COM_BOOKINGMANAGER_BOOKINGMANAGERS_STATE'); ?>
             </th>
-<!--            <th width="10%">-->
-<!--				--><?php //echo JText::_('COM_BOOKINGMANAGER_PUBLISHED'); ?>
-<!--            </th>-->
-<!--            <th width="4%">-->
-<!--				--><?php //echo JText::_('COM_BOOKINGMANAGER_ROOMID'); ?>
-<!--            </th>-->
         </tr>
         </thead>
         <tfoot>
@@ -39,7 +28,6 @@ defined('_JEXEC') or die('Restricted Access');
         <tbody>
 		<?php if (!empty($this->items)) : ?>
 			<?php foreach ($this->items as $i => $row) :
-				$link = JRoute::_('index.php?option=com_bookingmanager&task=bookingmanager.edit&roomId=' . $row->roomId);
 				?>
                 <tr>
                     <td>
@@ -49,9 +37,7 @@ defined('_JEXEC') or die('Restricted Access');
 						<?php echo JHtml::_('grid.id', $i, $row->roomId, ($row->state == 0) ? false : true); ?>
                     </td>
                     <td>
-                        <a href="<?= $link ?>" title="<?= JText::_('COM_BOOKINGMANAGER_EDIT_ROOM'); ?>">
-							<?php echo $row->roomNumber; ?>
-                        </a>
+                        <?php echo $row->roomNumber; ?>
                     </td>
                     <td>
 						<?php echo ($row->state == 0) ? JText::_('COM_BOOKINGMANAGER_BOOKINGMANAGERS_VACANT')
