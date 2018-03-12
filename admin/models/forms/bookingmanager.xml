@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<form
+    addrulepath="/administrator/components/com_bookingmanager/models/rules"
+>
+    <fieldset>
+        <field
+            name="roomId"
+            type="hidden"
+            />
+        <field
+            name="roomNumber"
+            type="text"
+            label="COM_BOOKINGMANAGER_BOOKINGMANAGER_ROOMNUMBER_LABEL"
+            description="COM_BOOKINGMANAGER_BOOKINGMANAGER_ROOMNUMBER_DESC"
+            size="30"
+            class="inputbox"
+            required="true"
+            default=""
+            />
+        <field
+            name="state"
+            type="list"
+            label="COM_BOOKINGMANAGER_BOOKINGMANAGER_STATE_LABEL"
+            description="COM_BOOKINGMANAGER_BOOKINGMANAGER_STATE_DESC"
+            class="inputbox"
+            default=""
+            >
+            <option value="">COM_BOOKINGMANAGER_BOOKINGMANAGER_PLEASESELECT</option>
+            <option value="0">COM_BOOKINGMANAGER_BOOKINGMANAGER_VACANT</option>
+            <option value="1">COM_BOOKINGMANAGER_BOOKINGMANAGER_OCCUPIED</option>
+        </field>
+    </fieldset>
+</form>

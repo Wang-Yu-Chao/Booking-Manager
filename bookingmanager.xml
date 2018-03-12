@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component"
+           version="2.5.0"
+           method="upgrade">
+
+    <name>COM_BOOKINGMANAGER</name>
+    <creationDate>FEBRUARY 2018</creationDate>
+    <author>Wang Yuchao</author>
+    <authorEmail>smoggray@gmail.com</authorEmail>
+    <authorUrl>https://github.com/Wang-Yu-Chao</authorUrl>
+    <copyright>Copyright Info</copyright>
+    <license>License Info</license>
+    <version>0.0.1</version>
+    <description>COM_BOOKINGMANAGER_DESCRIPTION</description>
+
+    <install>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+    <update>
+        <schemas>
+            <schemapath type="mysql">sql/updates/mysql</schemapath>
+        </schemas>
+    </update>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>bookingmanager.php</filename>
+        <filename>controller.php</filename>
+        <folder>controllers</folder>
+        <folder>views</folder>
+        <folder>models</folder>
+    </files>
+
+    <languages folder="site/language">
+        <language tag="en-GB">en-GB/en-GB.com_bookingmanager.ini</language>
+        <language tag="zh-CN">zh-CN/zh-CN.com_bookingmanager.ini</language>
+    </languages>
+
+    <media destination="com_bookingmanager" folder="media">
+        <filename>index.html</filename>
+        <folder>images</folder>
+    </media>
+
+    <administration>
+        <menu link='index.php?option=com_bookingmanager' img="../media/com_bookingmanager/images/bookingmanager-46X46.png">COM_BOOKINGMANAGER_MENU</menu>
+        <files folder="admin">
+            <!-- Admin Main File Copy Section -->
+            <filename>index.html</filename>
+            <filename>bookingmanager.php</filename>
+            <filename>controller.php</filename>
+            <!-- SQL files section -->
+            <folder>sql</folder>
+            <!-- tables files section -->
+            <folder>tables</folder>
+            <!-- models files section -->
+            <folder>models</folder>
+            <!-- views files section -->
+            <folder>views</folder>
+            <!-- controllers files sections -->
+            <folder>controllers</folder>
+            <folder>helpers</folder>
+        </files>
+        <languages folder="admin/language">
+            <language tag="en-GB">en-GB/en-GB.com_bookingmanager.ini</language>
+            <language tag="en-GB">en-GB/en-GB.com_bookingmanager.sys.ini</language>
+            <language tag="zh-CN">zh-CN/zh-CN.com_bookingmanager.ini</language>
+            <language tag="zh-CN">zh-CN/zh-CN.com_bookingmanager.sys.ini</language>
+        </languages>
+    </administration>
+
+</extension>

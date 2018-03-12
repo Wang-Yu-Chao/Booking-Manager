@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+    <layout title="COM_BOOKINGMANAGER_BOOKINGMANAGER_VIEW_DEFAULT_TITLE">
+        <message>COM_BOOKINGMANAGER_BOOKINGMANAGER_VIEW_DEFAULT_DESC</message>
+    </layout>
+    <fields
+        name="request"
+        addfieldpath="/administrator/components/com_bookingmanager/models/fields"
+        >
+        <fieldset name="request">
+            <field
+                name="id"
+                type="bookingmanager"
+                label="COM_BOOKINGMANAGER_BOOKINGMANAGER_FIELD_GREETING_LABEL"
+                description="COM_BOOKINGMANAGER_BOOKINGMANAGER_FIELD_GREETING_DESC"
+                default="1"
+                />
+        </fieldset>
+    </fields>
+</metadata>
