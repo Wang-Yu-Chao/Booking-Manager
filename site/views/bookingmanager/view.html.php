@@ -17,19 +17,11 @@ class BookingManagerViewBookingManager extends JViewLegacy
 	 */
 	function display($tpl = null)
 	{
-//		$app = JFactory::getApplication();
-//		$context = "bookingmanager.list.admin.bookingmanager";
-
 		$this->items            = $this->get('Items');
 		$this->pagination       = $this->get('Pagination');
 
 		$this->state            = $this->get('State');
-//		$this->filter_order     = $app->getUserStateFromRequest($context.'.filter_order', 'filter_order', 'roomNumber', 'cmd');
-//		$this->filter_order_Dir = $app->getUserStateFromRequest($context.'.filter_order_Dir', 'filter_order_Dir', 'asc', 'cmd');
-//		$this->filterForm       = $this->get('filterForm');
-//		$this->activeFilters    = $this->get('ActiveFilters');
 
-		// Check for errors
 		if (count($errors = $this->get('Errors')))
 		{
 			JLog::add(implode('<br />', $errors), JLog::WARNING, 'jerror');
