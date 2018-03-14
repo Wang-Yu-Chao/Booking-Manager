@@ -41,26 +41,29 @@ class BookingManagerModelBookingManagers extends JModelList
 		$db    = JFactory::getDbo();
 		$query = $db->getQuery(true);
 
-		$query->select('*')
-			->from($db->quoteName('#__rooms'));
+		$query->select('r.roomId as roomId, r.roomNumber as roomNumber, r.state as state, r.published as published')
+			->from($db->quoteName('#__rooms', 'r'));
+
+		$query->select('c.title as category_title')
+			->join('LEFT', $db->quoteName('#__categories', 'c') . ' ON c.id = r.catid');
 
 		$search = $this->getState('filter.search');
 
 		if (!empty($search))
 		{
 			$like = $db->quote('%' . $search . '%');
-			$query->where('roomNumber LIKE ' . $like);
+			$query->where('r.roomNumber LIKE ' . $like);
 		}
 
 		$published = $this->getState('filter.published');
 
 		if (is_numeric($published))
 		{
-			$query->where('published = ' . (int) $published);
+			$query->where('r.published = ' . (int) $published);
 		}
 		elseif ($published == '')
 		{
-			$query->where('(published IN (0, 1))');
+			$query->where('(r.published IN (0, 1))');
 		}
 
 		$orderCol   = $this->state->get('list.ordering', 'roomNumber');

@@ -5,6 +5,7 @@ CREATE TABLE `#__rooms` (
   `roomNumber`  VARCHAR(10)   NOT NULL,
   `state`       TINYINT(4)    NOT NULL DEFAULT '0',
   `published`   TINYINT(4)    NOT NULL DEFAULT '1',
+  `catid`	    int(11)    NOT NULL DEFAULT '0',
   PRIMARY KEY (`roomId`)
 )
   ENGINE =MyISAM

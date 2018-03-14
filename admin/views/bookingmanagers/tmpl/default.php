@@ -69,6 +69,9 @@ $listDirn   = $this->escape($this->filter_order_Dir);
                                 <a href="<?= $link ?>" title="<?= JText::_('COM_BOOKINGMANAGER_EDIT_ROOM'); ?>">
 								    <?php echo $row->roomNumber; ?>
                                 </a>
+								<div class="small">
+									<?php echo JText::_('JCATEGORY') . ': ' . $this->escape($row->category_title); ?>
+								</div>
                             </td>
                             <td>
 							    <?php echo ($row->state == 0) ? JText::_('COM_BOOKINGMANAGER_BOOKINGMANAGERS_VACANT')

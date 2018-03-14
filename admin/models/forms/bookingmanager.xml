@@ -21,11 +21,24 @@
             default=""
             />
         <field
+            name="catid"
+            type="category"
+            extension="com_bookingmanager"
+            class="inputbox"
+            default=""
+            label="COM_BOOKINGMANAGER_BOOKINGMANAGER_CATID_LABEL"
+            description="COM_BOOKINGMANAGER_BOOKINGMANAGER_CATID_DESC"
+            required="true"
+            >
+            <option value="0">JOPTION_SELECT_CATEGORY</option>
+        </field>
+        <field
             name="state"
             type="list"
             label="COM_BOOKINGMANAGER_BOOKINGMANAGER_STATE_LABEL"
             description="COM_BOOKINGMANAGER_BOOKINGMANAGER_STATE_DESC"
             class="inputbox"
+            required="true"
             default=""
             >
             <option value="">COM_BOOKINGMANAGER_BOOKINGMANAGER_PLEASESELECT</option>

@@ -38,6 +38,12 @@ abstract class BookingManagerHelper extends JHelperContent
 			$submenu == 'orders'
 		);
 
+		JHtmlSidebar::addEntry(
+			JText::_('COM_BOOKINGMANAGER_SUBMENU_CATEGORIES'),
+			'index.php?option=com_categories&view=categories&extension=com_bookingmanager',
+			$submenu == 'categories'
+		);
+
 		$document = JFactory::getDocument();
 		$document->addStyleDeclaration('.icon-48-bookingmanager ' .
 			'{background-image: url(../media/com_bookingmanager/images/hotel-48x48.png);}');
@@ -49,6 +55,8 @@ abstract class BookingManagerHelper extends JHelperContent
 			case 'orders':
 				$document->setTitle(JText::_('COM_BOOKINGMANAGER_ADMINISTRATION_ORDERS'));
 				break;
+			case 'categories':
+				$document->setTitle(JText::_('COM_BOOKINGMANAGER_ADMINISTRATION_CATEGORIES'));
 			default:
 				break;
 		}
