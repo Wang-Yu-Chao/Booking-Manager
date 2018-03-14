@@ -1,9 +1,9 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
-
+JHtml::_('behavior.formvalidator');
 ?>
 <form action="<?php echo JRoute::_('index.php?option=com_bookingmanager&view=customereditor&layout=edit&customerId=' . (int) $this->item->customerId, false); ?>"
-      method="post" name="adminForm" id="adminForm">
+      method="post" name="adminForm" id="adminForm" class="form-validate">
 	<div class="form-horizontal">
 		<fieldset class="adminform">
 			<legend><?php echo JText::_('COM_BOOKINGMANAGER_CUSTOMEREDITOR_INFO'); ?></legend>

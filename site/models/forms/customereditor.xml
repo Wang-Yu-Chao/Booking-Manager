@@ -19,13 +19,16 @@
             />
         <field
             name="email"
-            type="test"
+            type="email"
             label="COM_BOOKINGMANAGER_CUSTOMER_EMAIL_LABEL"
             description="COM_BOOKINGMANAGER_CUSTOMER_EMAIL_DESC"
             size="50"
-            class="inputbox"
+            class="inputbox validate-email"
+            message="COM_BOOKINGMANAGER_CUSTOMER_EMAIL_MESSAGE"
             required="true"
+            validate="email"
+			hint="COM_BOOKINGMANAGER_CUSTOMER_EMAIL_HINT"
             default=""
-            />
+        />
     </fieldset>
 </form>

@@ -13,8 +13,11 @@
             label="COM_BOOKINGMANAGER_BOOKINGMANAGER_ROOMNUMBER_LABEL"
             description="COM_BOOKINGMANAGER_BOOKINGMANAGER_ROOMNUMBER_DESC"
             size="30"
-            class="inputbox"
+            class="inputbox validate-roomNumber"
             required="true"
+            validate="roomNumber"
+			message="COM_BOOKINGMANAGER_BOOKINGMANAGER_ROOMNUMBER_MESSAGE"
+			hint="COM_BOOKINGMANAGER_BOOKINGMANAGER_ROOMNUMBER_HINT"
             default=""
             />
         <field
