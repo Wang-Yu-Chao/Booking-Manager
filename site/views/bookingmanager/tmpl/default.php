@@ -1,5 +1,5 @@
 <?php
-defined('_JEXEC') or die('Restricted Access');
+defined('_JEXEC') or die;
 ?>
 <form action="index.php?option=com_bookingmanager" method="post" id="adminForm" name="adminForm">
 	<table class="table table-striped table-hover">

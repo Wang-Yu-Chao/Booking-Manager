@@ -1,5 +1,5 @@
 <?php
-defined('_JEXEC') or die('Restricted access');
+defined('_JEXEC') or die;
 
 ?>
 <form action="<?php echo JRoute::_('index.php?option=com_bookingmanager&view=order&layout=edit&orderId=' . (int) $this->item->orderId, false); ?>"
