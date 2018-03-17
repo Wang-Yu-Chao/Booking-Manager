@@ -63,7 +63,6 @@ class BookingManagerModelOrder extends JModelAdmin
 	 */
 	protected function loadFormData()
 	{
-		// Check the session for previously entered form data.
 		$data = JFactory::getApplication()->getUserState(
 			'com_bookingmanager.edit.bookingmanager.data',
 			array()
@@ -75,5 +74,18 @@ class BookingManagerModelOrder extends JModelAdmin
 		}
 
 		return $data;
+	}
+
+	/**
+	 * Method to check if it's OK to delete a room.
+	 *
+	 * Overrides JModelAdmin::canDelete
+	 */
+	protected function canDelete($record)
+	{
+		if(!empty($record->orderId))
+		{
+			return JFactory::getUser()->authorise("core.delete", "com_bookingmanager.orders." . $record->orderId);
+		}
 	}
 }

@@ -2,13 +2,13 @@
 defined('_JEXEC') or die;
 
 /**
- * BookingManager Controller
+ * Order Controller
  *
  * @package     Joomla.Administrator
  * @subpackage  com_bookingmanager
  * @since       0.0.9
  */
-class BookingManagerControllerBookingManager extends JControllerForm
+class BookingManagerControllerOrder extends JControllerForm
 {
 	/**
 	 * Implement to allowAdd or not
@@ -23,7 +23,7 @@ class BookingManagerControllerBookingManager extends JControllerForm
 	{
 		return parent::allowAdd($data);
 	}
-	
+
 	/**
 	 * Implement to allow edit or not
 	 * Overwrites: JControllerForm::allowEdit
@@ -33,12 +33,12 @@ class BookingManagerControllerBookingManager extends JControllerForm
 	 *
 	 * @return bool
 	 */
-	protected function allowEdit($data = array(), $key = 'roomId')
+	protected function allowEdit($data = array(), $key = 'orderId')
 	{
 		$id = isset($data[$key]) ? $data[$key] : 0;
 		if(!empty($id))
 		{
-			return JFactory::getUser()->authorise("core.edit", "com_bookingmanager.rooms." . $id);
+			return JFactory::getUser()->authorise("core.edit", "com_bookingmanager.orders." . $id);
 		}
 	}
 }

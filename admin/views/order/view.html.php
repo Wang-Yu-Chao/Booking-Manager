@@ -8,12 +8,10 @@ defined('_JEXEC') or die;
  */
 class BookingManagerViewOrder extends JViewLegacy
 {
-	/**
-	 * View form
-	 *
-	 * @var form
-	 */
-	protected $form = null;
+	protected $form;
+	protected $item;
+	protected $script;
+	protected $canDo;
 
 	/**
 	 * Display the Order view
@@ -24,16 +22,14 @@ class BookingManagerViewOrder extends JViewLegacy
 	 */
 	public function display($tpl = null)
 	{
-		// Get the Data
 		$this->form = $this->get('Form');
 		$this->item = $this->get('Item');
 
-		// Check for errors.
+		$this->canDo = JHelperContent::getActions('com_bookingmanager', 'orders', $this->item->orderId);
+
 		if (count($errors = $this->get('Errors')))
 		{
-			JError::raiseError(500, implode('<br />', $errors));
-
-			return false;
+			throw new Exception(implode("\n", $errors), 500);
 		}
 
 		$this->addToolBar();
@@ -68,11 +64,42 @@ class BookingManagerViewOrder extends JViewLegacy
 		}
 
 		JToolbarHelper::title($title, 'order');
-		JToolbarHelper::save('order.save');
-		JToolbarHelper::cancel(
-			'order.cancel',
-			$isNew ? 'JTOOLBAR_CANCEL' : 'JTOOLBAR_CLOSE'
-		);
+
+		if ($isNew)
+		{
+			// For new records, check the create permission.
+			if ($this->canDo->get('core.create'))
+			{
+				JToolBarHelper::apply('bookingmanager.apply', 'JTOOLBAR_APPLY');
+				JToolBarHelper::save('bookingmanager.save', 'JTOOLBAR_SAVE');
+				JToolBarHelper::custom('bookingmanager.save2new', 'save-new.png', 'save-new_f2.png',
+					'JTOOLBAR_SAVE_AND_NEW', false);
+			}
+			JToolBarHelper::cancel('bookingmanager.cancel', 'JTOOLBAR_CANCEL');
+		}
+		else
+		{
+			if ($this->canDo->get('core.edit'))
+			{
+				// We can save the new record
+				JToolBarHelper::apply('bookingmanager.apply', 'JTOOLBAR_APPLY');
+				JToolBarHelper::save('bookingmanager.save', 'JTOOLBAR_SAVE');
+
+				// We can save this record, but check the create permission to see
+				// if we can return to make a new one.
+				if ($this->canDo->get('core.create'))
+				{
+					JToolBarHelper::custom('bookingmanager.save2new', 'save-new.png', 'save-new_f2.png',
+						'JTOOLBAR_SAVE_AND_NEW', false);
+				}
+			}
+			if ($this->canDo->get('core.create'))
+			{
+				JToolBarHelper::custom('bookingmanager.save2copy', 'save-copy.png', 'save-copy_f2.png',
+					'JTOOLBAR_SAVE_AS_COPY', false);
+			}
+			JToolBarHelper::cancel('bookingmanager.cancel', 'JTOOLBAR_CLOSE');
+		}
 	}
 
 	/**

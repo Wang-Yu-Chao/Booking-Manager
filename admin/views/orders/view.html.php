@@ -8,6 +8,8 @@ defined('_JEXEC') or die('Redirect access');
  */
 class BookingManagerViewOrders extends JViewLegacy
 {
+	protected $canDo;
+
 	/**
 	 * Display the Orders views
 	 *
@@ -31,11 +33,11 @@ class BookingManagerViewOrders extends JViewLegacy
 		$this->filterForm       = $this->get('filterForm');
 		$this->activeFilters    = $this->get('ActiveFilters');
 
+		$this->canDo = JHelperContent::getActions('com_bookingmanager');
+
 		if (count($errors = $this->get('Errors')))
 		{
-			JError::raiseError(500, implode('<br />', $errors));
-
-			return false;
+			throw new Exception(implode("\n", $errors), 500);
 		}
 
 		BookingManagerHelper::addSubmenu('bookingmanagers');
@@ -64,9 +66,16 @@ class BookingManagerViewOrders extends JViewLegacy
 		}
 
 		JToolBarHelper::title($title, 'bookingmanager');
-//		JToolBarHelper::addNew('order.add');
-//		JToolBarHelper::editList('order.edit');
-		JToolBarHelper::deleteList('Are you sure?', 'orders.delete');
+
+		if ($this->canDo->get('core.delete'))
+		{
+			JToolBarHelper::deleteList('Are you sure?', 'orders.delete', 'JTOOLBAR_DELETE');
+		}
+		if ($this->canDo->get('core.admin'))
+		{
+			JToolBarHelper::divider();
+			JToolBarHelper::preferences('com_bookingmanager');
+		}
 	}
 
 	/**

@@ -10,7 +10,7 @@
     <authorUrl>https://github.com/Wang-Yu-Chao</authorUrl>
     <copyright>Copyright Info</copyright>
     <license>License Info</license>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
     <description>COM_BOOKINGMANAGER_DESCRIPTION</description>
 
     <install>
@@ -56,6 +56,7 @@
             <filename>bookingmanager.php</filename>
             <filename>controller.php</filename>
             <filename>access.xml</filename>
+            <filename>config.xml</filename>
             <!-- SQL files section -->
             <folder>sql</folder>
             <!-- tables files section -->

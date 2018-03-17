@@ -2,7 +2,11 @@
 defined('_JEXEC') or die;
 
 $document = JFactory::getDocument();
-//$document->addStyleDeclaration('.icon-bookingmanager {background-image: url(../media/com_bookingmanager/images/hotel-64x64.png);}');
+
+if (!JFactory::getUser()->authorise('core.manage', 'com_bookingmanager'))
+{
+	throw new Exception(JText::_('JERROR_ALERTNOAUTHOR'));
+}
 
 JLoader::register('BookingManagerHelper', JPATH_COMPONENT . '/helpers/bookingmanager.php');
 

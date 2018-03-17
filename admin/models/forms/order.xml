@@ -2,7 +2,10 @@
 <form
         addrulepath="/administrator/components/com_bookingmanager/models/rules"
 >
-    <fieldset>
+    <fieldset
+            name="details"
+            label="COM_BOOKINGMANAGER_BOOKINGMANAGER_DETAILS"
+    >
         <field
                 name="orderId"
                 type="hidden"
@@ -26,6 +29,27 @@
                 class="inputbox"
                 required="true"
                 default=""
+        />
+    </fieldset>
+
+    <fieldset
+            name="accesscontrol"
+            label="COM_BOOKINGMANAGER_FIELDSET_RULES"
+    >
+        <field
+                name="asset_id"
+                type="hidden"
+                filter="unset"
+        />
+        <field
+                name="rules"
+                type="rules"
+                label="COM_BOOKINGMANAGER_FIELD_RULES_LABEL"
+                filter="rules"
+                validate="rules"
+                class="inputbox"
+                component="com_bookingmanager"
+                section="orders"
         />
     </fieldset>
 </form>

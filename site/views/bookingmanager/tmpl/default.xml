@@ -11,8 +11,8 @@
             <field
                 name="id"
                 type="bookingmanager"
-                label="COM_BOOKINGMANAGER_BOOKINGMANAGER_FIELD_GREETING_LABEL"
-                description="COM_BOOKINGMANAGER_BOOKINGMANAGER_FIELD_GREETING_DESC"
+                label="COM_BOOKINGMANAGER_BOOINGMANAGER_FIELD_ROOMS_LABEL"
+                description="COM_BOOKINGMANAGER_BOOKINGMANAGER_FIELD_ROOMS_DESC"
                 default="1"
                 />
         </fieldset>

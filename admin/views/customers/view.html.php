@@ -8,6 +8,8 @@ defined('_JEXEC') or die('Redirect access');
  */
 class BookingManagerViewCustomers extends JViewLegacy
 {
+	protected $canDo;
+
 	/**
 	 * Display the Customers views
 	 *
@@ -31,12 +33,12 @@ class BookingManagerViewCustomers extends JViewLegacy
 		$this->filterForm       = $this->get('filterForm');
 		$this->activeFilters    = $this->get('ActiveFilters');
 
-//		if (count($errors = $this->get('Errors')))
-//		{
-//			JError::raiseError(500, implode('<br />', $errors));
-//
-//			return false;
-//		}
+		$this->canDo = JHelperContent::getActions('com_bookingmanager');
+
+		if (count($errors = $this->get('Errors')))
+		{
+			throw new Exception(implode("\n", $errors), 500);
+		}
 
 		BookingManagerHelper::addSubmenu('bookingmanagers');
 
@@ -64,9 +66,24 @@ class BookingManagerViewCustomers extends JViewLegacy
 		}
 
 		JToolBarHelper::title($title, 'bookingmanager');
-		JToolBarHelper::addNew('customereditor.add');
-		JToolBarHelper::editList('customereditor.edit');
-		JToolBarHelper::deleteList('Are you sure?', 'customers.delete');
+
+		if ($this->canDo->get('core.create'))
+		{
+			JToolBarHelper::addNew('customereditor.add', 'JTOOLBAR_NEW');
+		}
+		if ($this->canDo->get('core.edit'))
+		{
+			JToolBarHelper::editList('customereditor.edit', 'JTOOLBAR_EDIT');
+		}
+		if ($this->canDo->get('core.delete'))
+		{
+			JToolBarHelper::deleteList('Are you sure?', 'customers.delete', 'JTOOLBAR_DELETE');
+		}
+		if ($this->canDo->get('core.admin'))
+		{
+			JToolBarHelper::divider();
+			JToolBarHelper::preferences('com_bookingmanager');
+		}
 	}
 
 	/**

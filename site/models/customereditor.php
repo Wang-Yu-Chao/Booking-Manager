@@ -63,7 +63,6 @@ class BookingManagerModelCustomerEditor extends JModelAdmin
 	 */
 	protected function loadFormData()
 	{
-		// Check the session for previously entered form data.
 		$data = JFactory::getApplication()->getUserState(
 			'com_bookingmanager.edit.customereditor.data',
 			array()
