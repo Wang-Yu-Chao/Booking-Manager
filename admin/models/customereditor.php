@@ -85,7 +85,7 @@ class BookingManagerModelCustomerEditor extends JModelAdmin
 	{
 		if(!empty($record->customerId))
 		{
-			return JFactory::getUser()->authorise("core.delete", "com_bookingmanager.customers." . $record->customerId);
+			return JFactory::getUser()->authorise("core.delete", "com_bookingmanager.customereditor." . $record->customerId);
 		}
 	}
 }

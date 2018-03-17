@@ -38,7 +38,7 @@ class BookingManagerControllerBookingManager extends JControllerForm
 		$id = isset($data[$key]) ? $data[$key] : 0;
 		if(!empty($id))
 		{
-			return JFactory::getUser()->authorise("core.edit", "com_bookingmanager.rooms." . $id);
+			return JFactory::getUser()->authorise("core.edit", "com_bookingmanager.bookingmanager." . $id);
 		}
 	}
 }

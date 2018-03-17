@@ -85,7 +85,7 @@ class BookingManagerModelOrder extends JModelAdmin
 	{
 		if(!empty($record->orderId))
 		{
-			return JFactory::getUser()->authorise("core.delete", "com_bookingmanager.orders." . $record->orderId);
+			return JFactory::getUser()->authorise("core.delete", "com_bookingmanager.order." . $record->orderId);
 		}
 	}
 }

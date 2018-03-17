@@ -26,7 +26,7 @@ class BookingManagerViewCustomerEditor extends JViewLegacy
 		$this->form = $this->get('Form');
 		$this->item = $this->get('Item');
 
-		$this->canDo = JHelperContent::getActions('com_bookingmanager', 'customers', $this->item->customerId);
+		$this->canDo = JHelperContent::getActions('com_bookingmanager', 'customereditor', $this->item->customerId);
 
 		if (count($errors = $this->get('Errors')))
 		{
@@ -54,22 +54,6 @@ class BookingManagerViewCustomerEditor extends JViewLegacy
 		$input->set('hidemainmenu', true);
 
 		$isNew = ($this->item->customerId == 0);
-
-		//		if ($isNew)
-		//		{
-		//			$title = JText::_('COM_BOOKINGMANAGER_MANAGER_CUSTOMEREDITOR_NEW');
-		//		}
-		//		else
-		//		{
-		//			$title = JText::_('COM_BOOKINGMANAGER_MANAGER_CUSTOMEREDITOR_EDIT');
-		//		}
-		//
-		//		JToolbarHelper::title($title, 'customereditor');
-		//		JToolbarHelper::save('customereditor.save');
-		//		JToolbarHelper::cancel(
-		//			'customereditor.cancel',
-		//			$isNew ? 'JTOOLBAR_CANCEL' : 'JTOOLBAR_CLOSE'
-		//		);
 
 		if ($isNew)
 		{

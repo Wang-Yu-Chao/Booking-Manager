@@ -26,7 +26,7 @@ class BookingManagerViewBookingManager extends JViewLegacy
 		$this->form = $this->get('Form');
 		$this->item = $this->get('Item');
 
-		$this->canDo = JHelperContent::getActions('com_bookingmanager', 'rooms', $this->item->roomId);
+		$this->canDo = JHelperContent::getActions('com_bookingmanager', 'bookingmanager', $this->item->roomId);
 
 		if (count($errors = $this->get('Errors')))
 		{

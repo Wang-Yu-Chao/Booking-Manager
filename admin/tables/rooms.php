@@ -59,7 +59,7 @@ class BookingManagerTableRooms extends JTable
 	protected function _getAssetName()
 	{
 		$k = $this->_tbl_key;
-		return 'com_bookingmanager.rooms.' . (int) $this->$k;
+		return 'com_bookingmanager.bookingmanager.' . (int) $this->$k;
 	}
 
 	/**

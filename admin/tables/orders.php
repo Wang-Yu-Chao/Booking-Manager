@@ -59,7 +59,7 @@ class BookingManagerTableOrders extends JTable
 	protected function _getAssetName()
 	{
 		$k = $this->_tbl_key;
-		return 'com_bookingmanager.orders.' . (int) $this->$k;
+		return 'com_bookingmanager.order.' . (int) $this->$k;
 	}
 
 	/**

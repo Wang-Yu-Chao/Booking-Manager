@@ -51,7 +51,7 @@ class BookingManagerTableCustomers extends JTable
 	protected function _getAssetName()
 	{
 		$k = $this->_tbl_key;
-		return 'com_bookingmanager.customers.' . (int) $this->$k;
+		return 'com_bookingmanager.customereditor.' . (int) $this->$k;
 	}
 
 	/**

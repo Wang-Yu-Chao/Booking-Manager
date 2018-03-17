@@ -1,6 +1,7 @@
 <?php
 defined('_JEXEC') or die;
 JHtml::_('behavior.formvalidator');
+
 JFactory::getDocument()->addScriptDeclaration('
 	jQuery(document).ready(function() {
         roomNumber = jQuery("#jform_roomNumber").val();
@@ -11,7 +12,7 @@ JFactory::getDocument()->addScriptDeclaration('
 <form action="<?php echo JRoute::_('index.php?option=com_bookingmanager&layout=edit&roomId=' . (int) $this->item->roomId); ?>"
       method="post" name="adminForm" id="adminForm" class="form-validate">
 
-	<input id="jform_title" type="hidden" name="bookingmanager-rooms-title"/>
+	<input id="jform_title" type="hidden" name="rooms-rooms-title"/>
 
 	<div class="form-horizontal">
 

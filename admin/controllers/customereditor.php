@@ -50,7 +50,7 @@ class BookingManagerControllerCustomerEditor extends JControllerForm
 		$id = isset($data[$key]) ? $data[$key] : 0;
 		if(!empty($id))
 		{
-			return JFactory::getUser()->authorise("core.edit", "com_bookingmanager.customers." . $id);
+			return JFactory::getUser()->authorise("core.edit", "com_bookingmanager.customereditor." . $id);
 		}
 	}
 }

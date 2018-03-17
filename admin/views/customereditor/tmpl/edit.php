@@ -18,7 +18,7 @@ JFactory::getDocument()->addScriptDeclaration('
 
 		<?php echo JHtml::_('bootstrap.startTabSet', 'myTab', array('active' => 'details')); ?>
 		<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'details',
-			empty($this->item->roomId) ? JText::_('COM_BOOKINGMANAGER_TAB_NEW_CUSTOMER') : JText::_('COM_BOOKINGMANAGER_TAB_EDIT_CUSTOMER')); ?>
+			empty($this->item->customerId) ? JText::_('COM_BOOKINGMANAGER_TAB_NEW_CUSTOMER') : JText::_('COM_BOOKINGMANAGER_TAB_EDIT_CUSTOMER')); ?>
 		<fieldset class="adminform">
 			<legend><?php echo JText::_('COM_BOOKINGMANAGER_LEGEND_DETAILS') ?></legend>
 			<div class="row-fluid">
