@@ -77,7 +77,7 @@ class BookingManagerViewBookingManagers extends JViewLegacy
 		}
 		if ($this->canDo->get('core.delete'))
 		{
-			JToolBarHelper::deleteList('Are you sure?', 'bokkingmanagers.delete', 'JTOOLBAR_DELETE');
+			JToolBarHelper::deleteList('Are you sure?', 'bookingmanagers.delete', 'JTOOLBAR_DELETE');
 		}
 		if ($this->canDo->get('core.admin'))
 		{
