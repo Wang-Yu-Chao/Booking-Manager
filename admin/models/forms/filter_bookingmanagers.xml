@@ -21,6 +21,24 @@
     </fields>
     <fields name="list">
         <field
+                name="fullordering"
+                type="list"
+                label="COM_BOOKINGMANAGER_LIST_FULL_ORDERING"
+                description="COM_BOOKINGMANAGER_LIST_FULL_ORDERING_DESC"
+                onchange="this.form.submit();"
+                default="roomNumber ASC"
+        >
+            <option value="">JGLOBAL_SORT_BY</option>
+            <option value="roomNumber ASC">COM_BOOKINGMANAGER_BOOKINGMANAGER_ORDERING_ASC</option>
+            <option value="roomNumber DESC">COM_BOOKINGMANAGER_BOOKINGMANAGER_ORDERING_DESC</option>
+            <option value="roomId ASC">JGRID_HEADING_ID_ASC</option>
+            <option value="roomId DESC">JGRID_HEADING_ID_DESC</option>
+            <option value="published ASC">COM_BOOKINGMANAGER_BOOKINGMANAGER_PUBLISHED_ASC</option>
+            <option value="published DESC">COM_BOOKINGMANAGER_BOOKINGMANAGER_PUBLISHED_DESC</option>
+            <option value="state ASC">COM_BOOKINGMANAGER_BOOKINGMANAGER_STATE_ASC</option>
+            <option value="state DESC">COM_BOOKINGMANAGER_BOOKINGMANAGER_STATE_DES</option>
+        </field>
+        <field
                 name="limit"
                 type="limitbox"
                 class="input-mini"

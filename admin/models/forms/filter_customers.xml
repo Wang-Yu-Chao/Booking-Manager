@@ -11,6 +11,22 @@
     </fields>
     <fields name="list">
         <field
+                name="fullordering"
+                type="list"
+                label="COM_BOOKINGMANAGER_LIST_FULL_ORDERING"
+                description="COM_BOOKINGMANAGER_LIST_FULL_ORDERING_DESC"
+                onchange="this.form.submit();"
+                default="name ASC"
+        >
+            <option value="">JGLOBAL_SORT_BY</option>
+            <option value="name ASC">COM_BOOKINGMANAGER_CUSTOMERS_ORDERING_ASC</option>
+            <option value="name DESC">COM_BOOKINGMANAGER_CUSTOMERS_ORDERING_DESC</option>
+            <option value="customerId ASC">JGRID_HEADING_ID_ASC</option>
+            <option value="customerId DESC">JGRID_HEADING_ID_DESC</option>
+            <option value="email ASC">COM_BOOKINGMANAGER_CUSTOMERS_EMAIL_ASC</option>
+            <option value="email DESC">COM_BOOKINGMANAGER_CUSTOMERS_EMAIL_DESC</option>
+        </field>
+        <field
                 name="limit"
                 type="limitbox"
                 class="input-mini"

@@ -3,8 +3,8 @@ defined('_JEXEC') or die;
 
 JHtml::_('formbehavior.chosen', 'select');
 
-$listOrder  = $this->escape($this->filter_order);
-$listDirn   = $this->escape($this->filter_order_Dir);
+$listOrder  = $this->escape($this->state->get('list.ordering'));
+$listDirn   = $this->escape($this->state->get('list.direction'));
 ?>
 <form action="index.php?option=com_bookingmanager&view=customers" method="post" id="adminForm" name="adminForm">
 	<div class="row">
@@ -33,13 +33,13 @@ $listDirn   = $this->escape($this->filter_order_Dir);
 						<?php echo JHtml::_('grid.checkall'); ?>
 					</th>
 					<th width="45%">
-						<?php echo JHtml::_('grid.sort', 'COM_BOOKINGMANAGER_CUSTOMERS_NAME', 'name', $listDirn, $listOrder); ?>
+						<?php echo JHtml::_('searchtools.sort', 'COM_BOOKINGMANAGER_CUSTOMERS_NAME', 'name', $listDirn, $listOrder); ?>
 					</th>
 					<th width="45%">
-						<?php echo JHtml::_('grid.sort', 'COM_BOOKINGMANAGER_CUSTOMERS_EMAIL', 'email', $listDirn, $listOrder) ?>
+						<?php echo JHtml::_('searchtools.sort', 'COM_BOOKINGMANAGER_CUSTOMERS_EMAIL', 'email', $listDirn, $listOrder) ?>
 					</th>
 					<th width="4%">
-						<?php echo JHtml::_('grid.sort', 'COM_BOOKINGMANAGER_CUSTOMERS_CUSTOMERID', 'customerId', $listDirn, $listOrder) ?>
+						<?php echo JHtml::_('searchtools.sort', 'COM_BOOKINGMANAGER_CUSTOMERS_CUSTOMERID', 'customerId', $listDirn, $listOrder) ?>
 					</th>
 				</tr>
 				</thead>

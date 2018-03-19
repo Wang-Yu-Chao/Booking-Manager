@@ -26,10 +26,7 @@ class BookingManagerViewCustomers extends JViewLegacy
 
 		$this->items      = $this->get('Items');
 		$this->pagination = $this->get('Pagination');
-
-		$this->status           = $this->get('State');
-		$this->filter_order     = $app->getUserStateFromRequest($context . '.filter_order', 'filter_order', 'name', 'cmd');
-		$this->filter_order_Dir = $app->getUserStateFromRequest($context . '.filter_order_Dir', 'filter_order_Dir', 'asc', 'cmd');
+		$this->state           = $this->get('State');
 		$this->filterForm       = $this->get('filterForm');
 		$this->activeFilters    = $this->get('ActiveFilters');
 

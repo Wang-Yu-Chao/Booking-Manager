@@ -3,8 +3,8 @@ defined('_JEXEC') or die;
 
 JHtml::_('formbehavior.chosen', 'select');
 
-$listOrder  = $this->escape($this->filter_order);
-$listDirn   = $this->escape($this->filter_order_Dir);
+$listOrder  = $this->escape($this->state->get('list.ordering'));
+$listDirn   = $this->escape($this->state->get('list.direction'));
 ?>
 <form action="index.php?option=com_bookingmanager&view=bookingmanagers" method="post" id="adminForm" name="adminForm">
     <div class="row">
@@ -33,16 +33,16 @@ $listDirn   = $this->escape($this->filter_order_Dir);
 					    <?php echo JHtml::_('grid.checkall'); ?>
                     </th>
                     <th width="40%">
-					    <?php echo JHtml::_('grid.sort', 'COM_BOOKINGMANAGER_BOOKINGMANAGERS_ROOMNUMBER', 'roomNumber', $listDirn, $listOrder); ?>
+					    <?php echo JHtml::_('searchtools.sort', 'COM_BOOKINGMANAGER_BOOKINGMANAGERS_ROOMNUMBER', 'roomNumber', $listDirn, $listOrder); ?>
                     </th>
                     <th width="40%">
-					    <?php echo JHtml::_('grid.sort', 'COM_BOOKINGMANAGER_BOOKINGMANAGERS_STATE', 'state', $listDirn, $listOrder) ?>
+					    <?php echo JHtml::_('searchtools.sort', 'COM_BOOKINGMANAGER_BOOKINGMANAGERS_STATE', 'state', $listDirn, $listOrder) ?>
                     </th>
                     <th width="10%">
-					    <?php echo JHtml::_('grid.sort', 'COM_BOOKINGMANAGER_PUBLISHED', 'published', $listDirn, $listOrder) ?>
+					    <?php echo JHtml::_('searchtools.sort', 'COM_BOOKINGMANAGER_PUBLISHED', 'published', $listDirn, $listOrder) ?>
                     </th>
                     <th width="4%">
-					    <?php echo JHtml::_('grid.sort', 'COM_BOOKINGMANAGER_ROOMID', 'roomId', $listDirn, $listOrder) ?>
+					    <?php echo JHtml::_('searchtools.sort', 'COM_BOOKINGMANAGER_ROOMID', 'roomId', $listDirn, $listOrder) ?>
                     </th>
                 </tr>
                 </thead>
@@ -90,8 +90,6 @@ $listDirn   = $this->escape($this->filter_order_Dir);
             </table>
             <input type="hidden" name="task" value=""/>
             <input type="hidden" name="boxchecked" value="0"/>
-            <input type="hidden" name="filter_order" value="<?= $listOrder ?>">
-            <input type="hidden" name="filter_order_Dir" value="<? $listDirn ?>">
 		    <?php echo JHtml::_('form.token'); ?>
         </div>
     </div>
