@@ -42,7 +42,7 @@ $listDirn   = $this->escape($this->state->get('list.direction'));
 					    <?php echo \JHtml::_('searchtools.sort', 'COM_BOOKINGMANAGER_PUBLISHED', 'published', $listDirn, $listOrder) ?>
                     </th>
                     <th width="4%">
-					    <?php echo \JHtml::_('searchtools.sort', 'COM_BOOKINGMANAGER_id', 'id', $listDirn, $listOrder) ?>
+					    <?php echo \JHtml::_('searchtools.sort', 'COM_BOOKINGMANAGER_ROOM_ID', 'id', $listDirn, $listOrder) ?>
                     </th>
                 </tr>
                 </thead>

@@ -37,7 +37,7 @@ class CustomerTable extends Table
 	{
 		if (isset($array['rules']) && is_array($array['rules']))
 		{
-			$rules = new JAccessRules($array['rules']);
+			$rules = new \JAccessRules($array['rules']);
 			$this->setRules($rules);
 		}
 
@@ -50,19 +50,19 @@ class CustomerTable extends Table
 	 * where id is the value of the primary key of the table.
 	 *
 	 * @return	string
-	 * @since	2.5
+	 * @since	0.0.1
 	 */
 	protected function _getAssetName()
 	{
 		$k = $this->_tbl_key;
-		return 'com_bookingmanager.Customer.' . (int) $this->$k;
+		return 'com_bookingmanager.customer.' . (int) $this->$k;
 	}
 
 	/**
 	 * Method to return the title to use for the asset table.
 	 *
 	 * @return	string
-	 * @since	2.5
+	 * @since	0.0.1
 	 */
 	protected function _getAssetTitle()
 	{

@@ -18,8 +18,8 @@ Factory::getDocument()->addScriptDeclaration('
 	<input id="jform_title" type="hidden" name="rooms-rooms-title"/>
 
 	<div class="form-horizontal">
-
 		<?php echo \JHtml::_('bootstrap.startTabSet', 'myTab', array('active' => 'details')); ?>
+
 		<?php echo \JHtml::_('bootstrap.addTab', 'myTab', 'details',
 			empty($this->item->id) ? \JText::_('COM_BOOKINGMANAGER_TAB_NEW_ROOM') : \JText::_('COM_BOOKINGMANAGER_TAB_EDIT_ROOM')); ?>
 		<fieldset class="adminform">
@@ -32,17 +32,6 @@ Factory::getDocument()->addScriptDeclaration('
 		</fieldset>
 		<?php echo \JHtml::_('bootstrap.endTab'); ?>
 
-<!--		--><?php //echo \JHtml::_('bootstrap.addTab', 'myTab', 'params', \JText::_('COM_BOOKINGMANAGER_TAB_PARAMS')); ?>
-<!--		<fieldset class="adminform">-->
-<!--			<legend>--><?php //echo \JText::_('COM_BOOKINGMANAGER_LEGEND_PARAMS') ?><!--</legend>-->
-<!--			<div class="row-fluid">-->
-<!--				<div class="span6">-->
-<!--					--><?php //echo $this->form->renderFieldset('params');  ?>
-<!--				</div>-->
-<!--			</div>-->
-<!--		</fieldset>-->
-<!--		--><?php //echo \JHtml::_('bootstrap.endTab'); ?>
-
 		<?php echo \JHtml::_('bootstrap.addTab', 'myTab', 'permissions', \JText::_('COM_BOOKINGMANAGER_TAB_PERMISSIONS')); ?>
 		<fieldset class="adminform">
 			<legend><?php echo \JText::_('COM_BOOKINGMANAGER_LEGEND_PERMISSIONS') ?></legend>
@@ -53,6 +42,7 @@ Factory::getDocument()->addScriptDeclaration('
 			</div>
 		</fieldset>
 		<?php echo \JHtml::_('bootstrap.endTab'); ?>
+
 		<?php echo \JHtml::_('bootstrap.endTabSet'); ?>
 
 	</div>

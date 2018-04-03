@@ -16,17 +16,18 @@ class CustomerModel extends AdminModel
 	/**
 	 * Method to get a table object, load it if necessary.
 	 *
-	 * @param   string  $type    The table name. Optional.
+	 * @param   string  $name    The table name. Optional.
 	 * @param   string  $prefix  The class prefix. Optional.
-	 * @param   array   $config  Configuration array for model. Optional.
+	 * @param   array   $options  Configuration array for model. Optional.
 	 *
 	 * @return  \JTable  A \JTable object
 	 *
 	 * @since   1.6
 	 */
-	public function getTable($type = 'Customer', $prefix = 'Administrator', $config = array())
+	public function getTable($name = 'Customer', $prefix = 'Administrator', $options = array())
 	{
-		return \JTable::getInstance($type, $prefix, $config);
+		$table = parent::getTable($name, $prefix, $options);
+		return $table;
 	}
 
 	/**
@@ -43,8 +44,8 @@ class CustomerModel extends AdminModel
 	{
 		// Get the form.
 		$form = $this->loadForm(
-			'com_bookingmanager.Customer',
-			'Customer',
+			'com_bookingmanager.customer',
+			'customer',
 			array(
 				'control' => 'jform',
 				'load_data' => $loadData
@@ -69,7 +70,7 @@ class CustomerModel extends AdminModel
 	protected function loadFormData()
 	{
 		$data = Factory::getApplication()->getUserState(
-			'com_bookingmanager.edit.Customer.data',
+			'com_bookingmanager.edit.customer.data',
 			array()
 		);
 
@@ -90,7 +91,7 @@ class CustomerModel extends AdminModel
 	{
 		if(!empty($record->id))
 		{
-			return Factory::getUser()->authorise("core.delete", "com_bookingmanager.Customer." . $record->id);
+			return Factory::getUser()->authorise("core.delete", "com_bookingmanager.customer." . $record->id);
 		}
 	}
 }

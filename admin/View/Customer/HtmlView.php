@@ -65,35 +65,35 @@ class HtmlView extends BaseHtmlView
 			// For new records, check the create permission.
 			if ($this->canDo->get('core.create'))
 			{
-				\JToolBarHelper::apply('Customer.apply', 'JTOOLBAR_APPLY');
-				\JToolBarHelper::save('Customer.save', 'JTOOLBAR_SAVE');
-				\JToolBarHelper::custom('Customer.save2new', 'save-new.png', 'save-new_f2.png',
+				\JToolBarHelper::apply('customer.apply', 'JTOOLBAR_APPLY');
+				\JToolBarHelper::save('customer.save', 'JTOOLBAR_SAVE');
+				\JToolBarHelper::custom('customer.save2new', 'save-new.png', 'save-new_f2.png',
 					'JTOOLBAR_SAVE_AND_NEW', false);
 			}
-			\JToolBarHelper::cancel('Customer.cancel', 'JTOOLBAR_CANCEL');
+			\JToolBarHelper::cancel('customer.cancel', 'JTOOLBAR_CANCEL');
 		}
 		else
 		{
 			if ($this->canDo->get('core.edit'))
 			{
 				// We can save the new record
-				\JToolBarHelper::apply('Customer.apply', 'JTOOLBAR_APPLY');
-				\JToolBarHelper::save('Customer.save', 'JTOOLBAR_SAVE');
+				\JToolBarHelper::apply('customer.apply', 'JTOOLBAR_APPLY');
+				\JToolBarHelper::save('customer.save', 'JTOOLBAR_SAVE');
 
 				// We can save this record, but check the create permission to see
 				// if we can return to make a new one.
 				if ($this->canDo->get('core.create'))
 				{
-					\JToolBarHelper::custom('Customer.save2new', 'save-new.png', 'save-new_f2.png',
+					\JToolBarHelper::custom('customer.save2new', 'save-new.png', 'save-new_f2.png',
 						'JTOOLBAR_SAVE_AND_NEW', false);
 				}
 			}
 			if ($this->canDo->get('core.create'))
 			{
-				\JToolBarHelper::custom('Customer.save2copy', 'save-copy.png', 'save-copy_f2.png',
+				\JToolBarHelper::custom('customer.save2copy', 'save-copy.png', 'save-copy_f2.png',
 					'JTOOLBAR_SAVE_AS_COPY', false);
 			}
-			\JToolBarHelper::cancel('Customer.cancel', 'JTOOLBAR_CLOSE');
+			\JToolBarHelper::cancel('customer.cancel', 'JTOOLBAR_CLOSE');
 		}
 	}
 

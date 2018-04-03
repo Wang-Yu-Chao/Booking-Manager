@@ -22,12 +22,12 @@ defined('_JEXEC') or die;
 
     <div class="btn-toolbar">
         <div class="btn-group">
-            <button type="button" class="btn btn-primary" onclick="Joomla.submitbutton('Customer.save')">
+            <button type="button" class="btn btn-primary" onclick="Joomla.submitbutton('customer.save')">
                 <span class="icon-ok"></span><?php echo \JText::_('COM_BOOKINGMANAGER_BOOKINGMANAGER_SUBMIT') ?>
             </button>
         </div>
         <div class="btn-group">
-            <button type="button" class="btn" onclick="Joomla.submitbutton('Customer.cancel')">
+            <button type="button" class="btn" onclick="Joomla.submitbutton('customer.cancel')">
                 <span class="icon-cancel"></span><?php echo \JText::_('JCANCEL') ?>
             </button>
         </div>

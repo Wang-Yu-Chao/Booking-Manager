@@ -5,6 +5,7 @@
     <fieldset
             name="details"
             label="COM_BOOKINGMANAGER_BOOKINGMANAGER_DETAILS"
+            addfieldprefix="Joomla\Component\BookingManager\Administrator\Field"
     >
         <field
                 name="id"

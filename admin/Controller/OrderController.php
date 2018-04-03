@@ -43,7 +43,7 @@ class OrderController extends FormController
 		$id = isset($data[$key]) ? $data[$key] : 0;
 		if(!empty($id))
 		{
-			return Factory::getUser()->authorise("core.edit", "com_bookingmanager.Order." . $id);
+			return Factory::getUser()->authorise("core.edit", "com_bookingmanager.order." . $id);
 		}
 	}
 }

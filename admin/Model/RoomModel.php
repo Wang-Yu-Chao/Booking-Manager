@@ -16,17 +16,18 @@ class RoomModel extends AdminModel
 	/**
 	 * Method to get a table object, load it if necessary.
 	 *
-	 * @param   string  $type    The table name. Optional.
+	 * @param   string  $name    The table name. Optional.
 	 * @param   string  $prefix  The class prefix. Optional.
-	 * @param   array   $config  Configuration array for model. Optional.
+	 * @param   array   $options  Configuration array for model. Optional.
 	 *
 	 * @return  \JTable  A \JTable object
 	 *
 	 * @since   1.6
 	 */
-	public function getTable($name = 'Room', $prefix = 'Administrator', $config = array())
+	public function getTable($name = 'Room', $prefix = 'Administrator', $options = array())
 	{
-		return \JTable::getInstance($name, $prefix, $config);
+		$table = parent::getTable($name, $prefix, $options);
+		return $table;
 	}
 
 	/**

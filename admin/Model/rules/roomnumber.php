@@ -14,7 +14,7 @@ class JFormRuleRoomnumber extends FormRule
 	 *
 	 * @access	protected
 	 * @var		string
-	 * @since	2.5
+	 * @since	0.0.1
 	 */
 	protected $regex = '^[A-Z][0-9]+$';
 }

@@ -70,7 +70,7 @@ class CustomerModel extends AdminModel
 	protected function loadFormData()
 	{
 		$data = Factory::getApplication()->getUserState(
-			'com_bookingmanager.edit.Customer.data',
+			'com_bookingmanager.edit.customer.data',
 			array()
 		);
 

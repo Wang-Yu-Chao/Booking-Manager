@@ -72,15 +72,15 @@ class HtmlView extends BaseHtmlView
 
 		if ($this->canDo->get('core.create'))
 		{
-			\JToolBarHelper::addNew('Customer.add', 'JTOOLBAR_NEW');
+			\JToolBarHelper::addNew('customer.add', 'JTOOLBAR_NEW');
 		}
 		if ($this->canDo->get('core.edit'))
 		{
-			\JToolBarHelper::editList('Customer.edit', 'JTOOLBAR_EDIT');
+			\JToolBarHelper::editList('customer.edit', 'JTOOLBAR_EDIT');
 		}
 		if ($this->canDo->get('core.delete'))
 		{
-			\JToolBarHelper::deleteList('Are you sure?', 'Customers.delete', 'JTOOLBAR_DELETE');
+			\JToolBarHelper::deleteList('Are you sure?', 'customers.delete', 'JTOOLBAR_DELETE');
 		}
 		if ($this->canDo->get('core.admin'))
 		{

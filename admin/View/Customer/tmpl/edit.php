@@ -13,7 +13,7 @@ Factory::getDocument()->addScriptDeclaration('
 ');
 ?>
 <form action="<?php echo \JRoute::_('index.php?option=com_bookingmanager&view=Customer&layout=edit&id=' . (int) $this->item->id); ?>"
-      method="post" name="adminForm" id="item-form" class="form-validate">
+      method="post" name="adminForm" id="adminForm" class="form-validate">
 
 	<input id="jform_title" type="hidden" name="customers-name-title"/>
 
@@ -22,25 +22,25 @@ Factory::getDocument()->addScriptDeclaration('
 
 		<?php echo \JHtml::_('bootstrap.addTab', 'myTab', 'details',
 			empty($this->item->id) ? \JText::_('COM_BOOKINGMANAGER_TAB_NEW_CUSTOMER') : \JText::_('COM_BOOKINGMANAGER_TAB_EDIT_CUSTOMER')); ?>
-		<div class="row">
-			<fieldset class="adminform">
-				<legend><?php echo \JText::_('COM_BOOKINGMANAGER_LEGEND_DETAILS') ?></legend>
+		<fieldset class="adminform">
+			<legend><?php echo \JText::_('COM_BOOKINGMANAGER_LEGEND_DETAILS') ?></legend>
+			<div class="row">
 				<div class="col-md-6">
 					<?php echo $this->form->renderFieldset('details');  ?>
 				</div>
-			</fieldset>
-		</div>
+			</div>
+		</fieldset>
 		<?php echo \JHtml::_('bootstrap.endTab'); ?>
 
 		<?php echo \JHtml::_('bootstrap.addTab', 'myTab', 'permissions', \JText::_('COM_BOOKINGMANAGER_TAB_PERMISSIONS')); ?>
-		<div class="row">
-			<fieldset class="adminform">
-				<legend><?php echo \JText::_('COM_BOOKINGMANAGER_LEGEND_PERMISSIONS') ?></legend>
+		<fieldset class="adminform">
+			<legend><?php echo \JText::_('COM_BOOKINGMANAGER_LEGEND_PERMISSIONS') ?></legend>
+			<div class="row">
 				<div class="col-md-12">
 					<?php echo $this->form->renderFieldset('accesscontrol');  ?>
 				</div>
-			</fieldset>
-		</div>
+			</div>
+		</fieldset>
 		<?php echo \JHtml::_('bootstrap.endTab'); ?>
 
 		<?php echo \JHtml::_('bootstrap.endTabSet'); ?>

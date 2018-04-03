@@ -28,7 +28,7 @@ class CustomerController extends FormController
 			$model->save($ids);
 			$data   = $app->getUserStateFromRequest('jform', 'jform', 'ARRAY');
 			$app->setUserState($context . 'data', $data);
-			$this->setRedirect(\JRoute::_('index.php?option=com_bookingmanager&task=Order.save', false));
+			$this->setRedirect(\JRoute::_('index.php?option=com_bookingmanager&task=order.save', false));
 		}
 		return $validate;
 	}

@@ -75,7 +75,7 @@ class HtmlView extends BaseHtmlView
 
 		if ($this->canDo->get('core.delete'))
 		{
-			\JToolBarHelper::deleteList('Are you sure?', 'Orders.delete', 'JTOOLBAR_DELETE');
+			\JToolBarHelper::deleteList('Are you sure?', 'orders.delete', 'JTOOLBAR_DELETE');
 		}
 		if ($this->canDo->get('core.admin'))
 		{

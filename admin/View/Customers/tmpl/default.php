@@ -39,7 +39,7 @@ $listDirn   = $this->escape($this->state->get('list.direction'));
 						<?php echo \JHtml::_('searchtools.sort', 'COM_BOOKINGMANAGER_CUSTOMERS_EMAIL', 'email', $listDirn, $listOrder) ?>
 					</th>
 					<th width="4%">
-						<?php echo \JHtml::_('searchtools.sort', 'COM_BOOKINGMANAGER_CUSTOMERS_id', 'id', $listDirn, $listOrder) ?>
+						<?php echo \JHtml::_('searchtools.sort', 'COM_BOOKINGMANAGER_CUSTOMERS_ID', 'id', $listDirn, $listOrder) ?>
 					</th>
 				</tr>
 				</thead>
@@ -53,7 +53,7 @@ $listDirn   = $this->escape($this->state->get('list.direction'));
 				<tbody>
 				<?php if (!empty($this->items)) : ?>
 					<?php foreach ($this->items as $i => $row) :
-						$link = \JRoute::_('index.php?option=com_bookingmanager&task=Customer.edit&id=' . $row->id);
+						$link = \JRoute::_('index.php?option=com_bookingmanager&task=customer.edit&id=' . $row->id);
                         ?>
 						<tr>
 							<td>

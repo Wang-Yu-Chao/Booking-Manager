@@ -42,7 +42,7 @@ $listDirn   = $this->escape($this->filter_order_Dir);
 						<?php echo \JHtml::_('grid.sort', 'COM_BOOKINGMANAGER_ORDERS_DATE', 'date', $listDirn, $listOrder); ?>
 					</th>
 					<th width="4%">
-						<?php echo \JHtml::_('grid.sort', 'COM_BOOKINGMANAGER_ORDERS_id', 'id', $listDirn, $listOrder) ?>
+						<?php echo \JHtml::_('grid.sort', 'COM_BOOKINGMANAGER_ORDERS_ID', 'id', $listDirn, $listOrder) ?>
 					</th>
 				</tr>
 				</thead>
@@ -56,7 +56,7 @@ $listDirn   = $this->escape($this->filter_order_Dir);
 				<tbody>
 				<?php if (!empty($this->items)) : ?>
 					<?php foreach ($this->items as $i => $row) :
-						$link = \JRoute::_('index.php?option=com_bookingmanager&task=Order.edit&id=' . $row->id);
+						$link = \JRoute::_('index.php?option=com_bookingmanager&task=order.edit&id=' . $row->id);
 						?>
 						<tr>
 							<td>
