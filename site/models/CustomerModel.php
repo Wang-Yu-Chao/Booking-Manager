@@ -44,7 +44,7 @@ class CustomerModel extends AdminModel
 	{
 		// Get the form.
 		$form = $this->loadForm(
-			'com_bookingmanager.Customer',
+			'com_bookingmanager.customer',
 			'Customer',
 			array(
 				'control' => 'jform',

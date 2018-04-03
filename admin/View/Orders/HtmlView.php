@@ -28,7 +28,7 @@ class HtmlView extends BaseHtmlView
 	function display($tpl = null)
 	{
 		$app     = Factory::getApplication();
-		$context = "room.list.admin.Orders";
+		$context = "room.list.admin.orders";
 
 		$this->items      = $this->get('Items');
 		$this->pagination = $this->get('Pagination');
