@@ -6,7 +6,7 @@ defined('_JEXEC') or die;
  *
  * @since  0.0.1
  */
-class BookingManagerTableCustomers extends JTable
+class BookingManagerTableCustomers extends \JTable
 {
 	/**
 	 * Constructor
@@ -15,6 +15,6 @@ class BookingManagerTableCustomers extends JTable
 	 */
 	function __construct(&$db)
 	{
-		parent::__construct('#__customers', 'customerId', $db);
+		parent::__construct('#__customers', 'id', $db);
 	}
 }

@@ -4,7 +4,7 @@
 >
     <fieldset>
         <field
-            name="customerId"
+            name="id"
             type="hidden"
             />
         <field
