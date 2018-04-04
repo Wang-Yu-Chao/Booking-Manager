@@ -19,7 +19,6 @@
                 size="30"
                 class="inputbox validate-roomNumber"
                 required="true"
-                validate="roomNumber"
                 message="COM_BOOKINGMANAGER_BOOKINGMANAGER_ROOMNUMBER_MESSAGE"
                 hint="COM_BOOKINGMANAGER_BOOKINGMANAGER_ROOMNUMBER_HINT"
                 default=""

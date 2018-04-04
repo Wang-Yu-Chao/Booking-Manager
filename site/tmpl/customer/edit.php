@@ -2,7 +2,7 @@
 defined('_JEXEC') or die;
 \JHtml::_('behavior.formvalidator');
 ?>
-<form action="<?php echo \JRoute::_('index.php?option=com_bookingmanager&view=Customer&layout=edit&id=' . (int) $this->item->id, false); ?>"
+<form action="<?php echo \JRoute::_('index.php?option=com_bookingmanager&view=customer&layout=edit', false); ?>"
       method="post" name="adminForm" id="adminForm" class="form-validate">
 	<div class="form-horizontal">
 		<fieldset class="adminform">
@@ -33,6 +33,6 @@ defined('_JEXEC') or die;
         </div>
     </div>
 
-	<input type="hidden" name="task" value="customereditor.edit" />
+	<input type="hidden" name="task" value="customer.edit" />
 	<?php echo \JHtml::_('form.token'); ?>
 </form>

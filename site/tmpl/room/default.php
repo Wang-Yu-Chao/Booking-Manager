@@ -51,7 +51,7 @@ defined('_JEXEC') or die;
 
 	<div class="btn-toolbar">
 		<div class="btn-group">
-			<button type="button" class="btn btn-primary" onclick="Joomla.submitbutton('bookingmanager.save')">
+			<button type="button" class="btn btn-primary" onclick="Joomla.submitbutton('room.save')">
 				<span class="icon-ok"></span>
 				<?php echo \JText::_('COM_BOOKINGMANAGER_BOOKINGMANAGER_RESERVE') ?>
 			</button>

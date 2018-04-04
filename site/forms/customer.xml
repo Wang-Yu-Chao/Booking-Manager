@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<form
-    addrulepath="/administrator/components/com_bookingmanager/models/rules"
->
-    <fieldset>
+<form>
+    <fieldset
+        addfieldprefix="Joomla\Component\BookingManager\Site\Field"
+    >
         <field
             name="id"
             type="hidden"
-            />
+        />
         <field
             name="name"
             type="text"
@@ -16,7 +16,7 @@
             class="inputbox"
             required="true"
             default=""
-            />
+        />
         <field
             name="email"
             type="email"
@@ -27,7 +27,7 @@
             message="COM_BOOKINGMANAGER_CUSTOMER_EMAIL_MESSAGE"
             required="true"
             validate="email"
-			hint="COM_BOOKINGMANAGER_CUSTOMER_EMAIL_HINT"
+            hint="COM_BOOKINGMANAGER_CUSTOMER_EMAIL_HINT"
             default=""
         />
     </fieldset>

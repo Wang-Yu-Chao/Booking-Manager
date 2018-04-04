@@ -41,4 +41,4 @@ CREATE TABLE `#__orders` (
 INSERT INTO `#__rooms` (`roomNumber`, `state`) VALUES ('A100', '1');
 INSERT INTO `#__rooms` (`roomNumber`) VALUES ('B234');
 INSERT INTO `#__customers` (`name`, `email`) VALUES ('Wang Yuchao', 'example@email.com');
-INSERT INTO `#__orders` (`id`, `id`) VALUES ('1', '1');
+INSERT INTO `#__orders` (`roomId`, `customerId`) VALUES ('1', '1');

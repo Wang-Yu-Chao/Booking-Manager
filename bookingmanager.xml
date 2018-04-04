@@ -13,11 +13,14 @@
 	<namespace>Joomla\Component\BookingManager</namespace>
 	<files folder="site">
 		<filename>index.html</filename>
-		<filename>bookingmanager.php</filename>
-		<filename>controller.php</filename>
-		<folder>controllers</folder>
-		<folder>views</folder>
-		<folder>models</folder>
+		<filename>dispatcher.php</filename>
+		<filename>router.php</filename>
+		<folder>Controller</folder>
+		<folder>View</folder>
+		<folder>Model</folder>
+		<folder>forms</folder>
+		<folder>Table</folder>
+		<folder>tmpl</folder>
 	</files>
 
 	<install>
@@ -54,6 +57,7 @@
 			<folder>Controller</folder>
 			<folder>Helper</folder>
 			<folder>forms</folder>
+			<folder>tmpl</folder>
 		</files>
 		<languages folder="admin/language">
 			<language tag="en-GB">en-GB/en-GB.com_bookingmanager.ini</language>

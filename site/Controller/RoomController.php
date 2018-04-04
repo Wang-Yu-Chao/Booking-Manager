@@ -20,15 +20,18 @@ class RoomController extends FormController
 	public function save($key = NULL, $urlVar = NULL)
 	{
 		$app        = Factory::getApplication();
-		$context    = "room.list.site.room";
+		$context    = "{$this->option}.edit.{$this->context}";
 		$input      = $app->input;
-		$ids    = $input->get('cid', array(), 'ARRAY');
+		$model      = $this->getModel();
+		$ids        = $input->get('cid', array(), 'ARRAY');
 		if (empty($ids))
 		{
-			$this->setRedirect(\JRoute::_('index.php?option=com_bookingmanager', false), "Please select a room.");
+			$this->setRedirect(\JRoute::_('index.php?option=com_bookingmanager&view=room', false), "Please select at least a room.");
 			$this->redirect();
 		}
-		$app->setUserState($context . '.ids', $ids);
-		$this->setRedirect(\JRoute::_('index.php?option=com_bookingmanager&view=Customer&layout=edit', false));
+		$model->save($ids);
+		$app->setUserState($context . '.roomIds', $ids);
+		$this->setRedirect(\JRoute::_('index.php?option=com_bookingmanager&view=customer&layout=edit', false));
+		$this->redirect();
 	}
 }

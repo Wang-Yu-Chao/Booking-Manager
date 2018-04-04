@@ -14,6 +14,33 @@ use Joomla\CMS\Factory;
 class HtmlView extends BaseHtmlView
 {
 	/**
+	 * An array of items
+	 *
+	 * @var   array
+	 *
+	 * @since  0.0.1
+	 */
+	protected $items;
+
+	/**
+	 * The pagination object
+	 *
+	 * @var    \Joomla\CMS\Pagination\Pagination
+	 *
+	 * @since  0.0.1
+	 */
+	protected $pagination;
+
+	/**
+	 * The model state
+	 *
+	 * @var    object
+	 *
+	 * @since  0.0.1
+	 */
+	protected $state;
+
+	/**
 	 * Display the BookingManager view
 	 *
 	 * @param   string  $tpl  The name of the template file to parse; automatically searches through the template paths.
@@ -24,14 +51,11 @@ class HtmlView extends BaseHtmlView
 	{
 		$this->items            = $this->get('Items');
 		$this->pagination       = $this->get('Pagination');
-
 		$this->state            = $this->get('State');
 
 		if (count($errors = $this->get('Errors')))
 		{
-			JLog::add(implode('<br />', $errors), JLog::WARNING, 'jerror');
-
-			return false;
+			throw new \Exception(implode("\n", $errors), 500);
 		}
 
 		parent::display($tpl);

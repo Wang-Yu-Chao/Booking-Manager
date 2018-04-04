@@ -14,6 +14,40 @@ use Joomla\Component\BookingManager\Administrator\Helper\BookingManagerHelper;
  */
 class HtmlView extends BaseHtmlView
 {
+	/**
+	 * An array of items
+	 *
+	 * @var   array
+	 *
+	 * @since  0.0.1
+	 */
+	protected $items;
+
+	/**
+	 * The pagination object
+	 *
+	 * @var    \Joomla\CMS\Pagination\Pagination
+	 *
+	 * @since  0.0.1
+	 */
+	protected $pagination;
+
+	/**
+	 * The model state
+	 *
+	 * @var    object
+	 *
+	 * @since  0.0.1
+	 */
+	protected $state;
+
+	/**
+	 * The actions the user is authorised to perform
+	 *
+	 * @var    \JObject
+	 *
+	 * @since  0.0.1
+	 */
 	protected $canDo;
 
 	/**

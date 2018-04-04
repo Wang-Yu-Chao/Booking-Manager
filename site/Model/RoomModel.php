@@ -7,7 +7,7 @@ use Joomla\CMS\MVC\Model\ListModel;
 use Joomla\CMS\Factory;
 
 /**
- * BookingManager Model
+ * Room Model
  *
  * @since  0.0.1
  */
@@ -63,5 +63,7 @@ class RoomModel extends ListModel
 			$db->setQuery($query);
 			$result = $db->execute();
 		}
+
+		return true;
 	}
 }

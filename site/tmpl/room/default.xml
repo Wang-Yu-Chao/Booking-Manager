@@ -5,9 +5,12 @@
     </layout>
     <fields
         name="request"
-        addfieldpath="/administrator/components/com_bookingmanager/models/fields"
+        addfieldprefix="Joomla\Component\BookingManager\Administrator\Field"
         >
-        <fieldset name="request">
+        <fieldset
+            name="request"
+            addfieldpath="/administrator/components/com_bookingmanager/models/fields"
+        >
             <field
                 name="id"
                 type="bookingmanager"

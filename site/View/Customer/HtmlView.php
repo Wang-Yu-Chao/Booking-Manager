@@ -17,6 +17,8 @@ class HtmlView extends BaseHtmlView
 	 * View form
 	 *
 	 * @var form
+	 *
+	 * @since 0.0.1
 	 */
 	protected $form = null;
 
@@ -35,9 +37,7 @@ class HtmlView extends BaseHtmlView
 
 		if (count($errors = $this->get('Errors')))
 		{
-			JError::raiseError(500, implode('<br />', $errors));
-
-			return false;
+			throw new \Exception(implode("\n", $errors), 500);
 		}
 
 		parent::display($tpl);
@@ -49,6 +49,8 @@ class HtmlView extends BaseHtmlView
 	 * Method to set up the document properties
 	 *
 	 * @return void
+	 *
+	 * @since 0.0.1
 	 */
 	protected function setDocument()
 	{

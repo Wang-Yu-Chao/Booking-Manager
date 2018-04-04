@@ -8,7 +8,7 @@ use Joomla\CMS\Factory;
 use Joomla\CMS\Table\Table;
 
 /**
- * CustomerEditor Model
+ * Customer Model
  *
  * @since  0.0.1
  */
@@ -17,17 +17,18 @@ class CustomerModel extends AdminModel
 	/**
 	 * Method to get a table object, load it if necessary.
 	 *
-	 * @param   string  $type    The table name. Optional.
+	 * @param   string  $name    The table name. Optional.
 	 * @param   string  $prefix  The class prefix. Optional.
-	 * @param   array   $config  Configuration array for model. Optional.
+	 * @param   array   $options  Configuration array for model. Optional.
 	 *
 	 * @return  \JTable  A \JTable object
 	 *
-	 * @since   1.6
+	 * @since   0.0.1
 	 */
-	public function getTable($type = 'Customers', $prefix = 'BookingManagerTable', $config = array())
+	public function getTable($name = 'Customer', $prefix = 'Site', $options = array())
 	{
-		return Table::getInstance($type, $prefix, $config);
+		$table = parent::getTable($name, $prefix, $options);
+		return $table;
 	}
 
 	/**
@@ -38,14 +39,14 @@ class CustomerModel extends AdminModel
 	 *
 	 * @return  mixed    A JForm object on success, false on failure
 	 *
-	 * @since   1.6
+	 * @since   0.0.1
 	 */
 	public function getForm($data = array(), $loadData = true)
 	{
 		// Get the form.
 		$form = $this->loadForm(
 			'com_bookingmanager.customer',
-			'Customer',
+			'customer',
 			array(
 				'control' => 'jform',
 				'load_data' => $loadData
@@ -65,7 +66,7 @@ class CustomerModel extends AdminModel
 	 *
 	 * @return  mixed  The data for the form.
 	 *
-	 * @since   1.6
+	 * @since   0.0.1
 	 */
 	protected function loadFormData()
 	{

@@ -1,12 +1,14 @@
 <?php
+namespace Joomla\Component\BookingManager\Site\Table;
+
 defined('_JEXEC') or die;
 
 /**
- * Customers Table class
+ * Customer Table class
  *
  * @since  0.0.1
  */
-class BookingManagerTableCustomers extends \JTable
+class CustomerTable extends \JTable
 {
 	/**
 	 * Constructor
