@@ -1,3 +1,0 @@
-ALTER TABLE `#__rooms` ADD COLUMN `asset_id` INT UNSIGNED NOT NULL DEFAULT '0' AFTER `roomId`;
-ALTER TABLE `#__customers` ADD COLUMN `asset_id` INT UNSIGNED NOT NULL DEFAULT '0' AFTER `customerId`;
-ALTER TABLE `#__orders` ADD COLUMN `asset_id` INT UNSIGNED NOT NULL DEFAULT '0' AFTER `orderId`;

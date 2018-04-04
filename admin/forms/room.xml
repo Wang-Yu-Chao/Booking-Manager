@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<form
+        addrulepath="/administrator/components/com_bookingmanager/models/rules"
+>
+    <fieldset
+            name="details"
+            label="COM_BOOKINGMANAGER_BOOKINGMANAGER_DETAILS"
+            addfieldprefix="Joomla\Component\BookingManager\Administrator\Field"
+    >
+        <field
+                name="id"
+                type="hidden"
+        />
+        <field
+                name="roomNumber"
+                type="text"
+                label="COM_BOOKINGMANAGER_BOOKINGMANAGER_ROOMNUMBER_LABEL"
+                description="COM_BOOKINGMANAGER_BOOKINGMANAGER_ROOMNUMBER_DESC"
+                size="30"
+                class="inputbox validate-roomNumber"
+                required="true"
+                message="COM_BOOKINGMANAGER_BOOKINGMANAGER_ROOMNUMBER_MESSAGE"
+                hint="COM_BOOKINGMANAGER_BOOKINGMANAGER_ROOMNUMBER_HINT"
+                default=""
+        />
+        <field
+                name="catid"
+                type="category"
+                extension="com_bookingmanager"
+                class="inputbox"
+                default=""
+                label="COM_BOOKINGMANAGER_BOOKINGMANAGER_CATID_LABEL"
+                description="COM_BOOKINGMANAGER_BOOKINGMANAGER_CATID_DESC"
+                required="true"
+        >
+            <option value="0">JOPTION_SELECT_CATEGORY</option>
+        </field>
+        <field
+                name="state"
+                type="list"
+                label="COM_BOOKINGMANAGER_BOOKINGMANAGER_STATE_LABEL"
+                description="COM_BOOKINGMANAGER_BOOKINGMANAGER_STATE_DESC"
+                class="inputbox"
+                required="true"
+                default=""
+        >
+            <option value="">COM_BOOKINGMANAGER_BOOKINGMANAGER_PLEASESELECT</option>
+            <option value="0">COM_BOOKINGMANAGER_BOOKINGMANAGER_VACANT</option>
+            <option value="1">COM_BOOKINGMANAGER_BOOKINGMANAGER_OCCUPIED</option>
+        </field>
+    </fieldset>
+
+    <fieldset
+            name="accesscontrol"
+            label="COM_BOOKINGMANAGER_FIELDSET_RULES"
+    >
+        <field
+                name="asset_id"
+                type="hidden"
+                filter="unset"
+        />
+        <field
+                name="rules"
+                type="rules"
+                label="COM_BOOKINGMANAGER_FIELD_RULES_LABEL"
+                filter="rules"
+                validate="rules"
+                class="inputbox"
+                component="com_bookingmanager"
+                section="rooms"
+        />
+    </fieldset>
+</form>

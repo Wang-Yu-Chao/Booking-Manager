@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<form>
+	<fieldset
+			name="details"
+			label="COM_BOOKINGMANAGER_BOOKINGMANAGER_DETAILS"
+			addfieldprefix="Joomla\Component\BookingManager\Administrator\Field"
+	>
+		<field
+				name="id"
+				type="hidden"
+		/>
+		<field
+				name="name"
+				type="text"
+				label="COM_BOOKINGMANAGER_CUSTOMER_NAME_LABEL"
+				description="COM_BOOKINGMANAGER_CUSTOMER_NAME_DESC"
+				size="30"
+				class="inputbox"
+				required="true"
+				default=""
+		/>
+		<field
+				name="email"
+				type="email"
+				label="COM_BOOKINGMANAGER_CUSTOMER_EMAIL_LABEL"
+				description="COM_BOOKINGMANAGER_CUSTOMER_EMAIL_DESC"
+				size="50"
+				class="inputbox required validate-email"
+				message="COM_BOOKINGMANAGER_CUSTOMER_EMAIL_MESSAGE"
+				required="true"
+				validate="email"
+				hint="COM_BOOKINGMANAGER_CUSTOMER_EMAIL_HINT"
+				default=""
+		/>
+	</fieldset>
+
+	<fieldset
+			name="accesscontrol"
+			label="COM_BOOKINGMANAGER_FIELDSET_RULES"
+	>
+		<field
+				name="asset_id"
+				type="hidden"
+				filter="unset"
+		/>
+		<field
+				name="rules"
+				type="rules"
+				label="COM_BOOKINGMANAGER_FIELD_RULES_LABEL"
+				filter="rules"
+				validate="rules"
+				class="inputbox"
+				component="com_bookingmanager"
+				section="customers"
+		/>
+	</fieldset>
+</form>
